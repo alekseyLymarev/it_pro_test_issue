@@ -1,0 +1,11 @@
+<div class="tree">
+  <ng-container *ngFor="let node of nodes">
+    <div class="tree-node" [ngStyle]="{paddingLeft: getStyle(node)}">
+      <app-checkbox
+        [(ngModel)]="node.checked"
+        [indeterminate]="node.indeterminate"
+        (ngModelChange)="ChangeNodeState($event, node)"
+      >{{node.name}}</app-checkbox>
+    </div>
+  </ng-container>
+</div>
